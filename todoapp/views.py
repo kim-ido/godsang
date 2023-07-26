@@ -30,7 +30,7 @@ def todo_detail(request, pk):
         serializer = TodoSerializer(todo)
         return Response(serializer.data)
 
-    if request.method == "PUT":
+    elif request.method == "PATCH":
         serializer = TodoSerializer(todo, data=request.data)
         if serializer.is_valid():
             serializer.save()
